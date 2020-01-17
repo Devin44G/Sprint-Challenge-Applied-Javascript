@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+    --> Document Object Model. It is a representation of our document, comprised of nodes which we can call and manipulate. It is also language independent.
+
 2. What is an event?
+
+    --> An event is an action which occurs within our document - a click, a scroll, a keypress, etc.
 
 3. What is an event listener?
 
+    --> A method which allows us to listen for when these events occur, and then do something when that happens.
+
 4. Why would we convert a NodeList into an Array?
 
+    --> In order to be able to use higher order functions on that data.
+
 5. What is a component?
+
+    --> A smaller piece which makes up a larger whole of something. Specifically, in JS, it's a small, reusable set of code.
 
 ### Git Set up
 
@@ -51,7 +61,7 @@ Your finished project must include all of the following requirements:
 
 * [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [ ] Following the instructions in the `Header/index.js` file, create the Header component.
 
 * [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
