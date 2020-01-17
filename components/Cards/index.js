@@ -162,4 +162,4 @@ function cards(obj) {
 }
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-      .then( src => cards(src.data.articles));
+      .then( res => cards(res.data.articles));
