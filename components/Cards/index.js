@@ -23,140 +23,143 @@ console.log(axios.get('https://lambda-times-backend.herokuapp.com/articles'));
 const CARDS = document.querySelector('.cards-container');
 
 function cards(obj) {
-  console.log(obj);
 
-  obj.articles.javascript.map( article => {
-    const CARD = document.createElement('div');
-          CARD.classList.add('card');
-          CARDS.append(CARD);
+  for (const [key, value] of Object.entries(obj)) {
+    value.forEach( (art) => {
 
-    const HEADLINE = document.createElement('div');
-          HEADLINE.classList.add('headline');
-          HEADLINE.textContent = article.headline
-          CARD.append(HEADLINE);
+      const CARD = document.createElement('div');
+            CARD.classList.add('card');
+            CARDS.append(CARD);
 
-    const AUTHOR = document.createElement('div');
-          AUTHOR.classList.add('author');
-          CARD.append(AUTHOR);
+      const HEADLINE = document.createElement('div');
+            HEADLINE.classList.add('headline');
+            HEADLINE.textContent = art.headline
+            // console.log(value.forEach(a => a));
+            CARD.append(HEADLINE);
 
-    const IMG_CONT = document.createElement('div');
-          IMG_CONT.classList.add('img-container');
-          AUTHOR.append(IMG_CONT);
+      const AUTHOR = document.createElement('div');
+            AUTHOR.classList.add('author');
+            CARD.append(AUTHOR);
 
-    const IMG = document.createElement('img');
-          IMG.src = article.authorPhoto;
-          IMG_CONT.append(IMG);
+      const IMG_CONT = document.createElement('div');
+            IMG_CONT.classList.add('img-container');
+            AUTHOR.append(IMG_CONT);
 
-    const NAME = document.createElement('span')
-          NAME.textContent = article.authorName;
-          AUTHOR.append(NAME);
-  });
-  obj.articles.bootstrap.map( article => {
-    const CARD = document.createElement('div');
-          CARD.classList.add('card');
-          CARDS.append(CARD);
+      const IMG = document.createElement('img');
+            IMG.src = art.authorPhoto;
+            IMG_CONT.append(IMG);
 
-    const HEADLINE = document.createElement('div');
-          HEADLINE.classList.add('headline');
-          HEADLINE.textContent = article.headline
-          CARD.append(HEADLINE);
-
-    const AUTHOR = document.createElement('div');
-          AUTHOR.classList.add('author');
-          CARD.append(AUTHOR);
-
-    const IMG_CONT = document.createElement('div');
-          IMG_CONT.classList.add('img-container');
-          AUTHOR.append(IMG_CONT);
-
-    const IMG = document.createElement('img');
-          IMG.src = article.authorPhoto;
-          IMG_CONT.append(IMG);
-
-    const NAME = document.createElement('span')
-          NAME.textContent = article.authorName;
-          AUTHOR.append(NAME);
-  });
-  obj.articles.technology.map( article => {
-    const CARD = document.createElement('div');
-          CARD.classList.add('card');
-          CARDS.append(CARD);
-
-    const HEADLINE = document.createElement('div');
-          HEADLINE.classList.add('headline');
-          HEADLINE.textContent = article.headline
-          CARD.append(HEADLINE);
-
-    const AUTHOR = document.createElement('div');
-          AUTHOR.classList.add('author');
-          CARD.append(AUTHOR);
-
-    const IMG_CONT = document.createElement('div');
-          IMG_CONT.classList.add('img-container');
-          AUTHOR.append(IMG_CONT);
-
-    const IMG = document.createElement('img');
-          IMG.src = article.authorPhoto;
-          IMG_CONT.append(IMG);
-
-    const NAME = document.createElement('span')
-          NAME.textContent = article.authorName;
-          AUTHOR.append(NAME);
-  });
-  obj.articles.jquery.map( article => {
-    const CARD = document.createElement('div');
-          CARD.classList.add('card');
-          CARDS.append(CARD);
-
-    const HEADLINE = document.createElement('div');
-          HEADLINE.classList.add('headline');
-          HEADLINE.textContent = article.headline
-          CARD.append(HEADLINE);
-
-    const AUTHOR = document.createElement('div');
-          AUTHOR.classList.add('author');
-          CARD.append(AUTHOR);
-
-    const IMG_CONT = document.createElement('div');
-          IMG_CONT.classList.add('img-container');
-          AUTHOR.append(IMG_CONT);
-
-    const IMG = document.createElement('img');
-          IMG.src = article.authorPhoto;
-          IMG_CONT.append(IMG);
-
-    const NAME = document.createElement('span')
-          NAME.textContent = article.authorName;
-          AUTHOR.append(NAME);
-  });
-  obj.articles.node.map( article => {
-    const CARD = document.createElement('div');
-          CARD.classList.add('card');
-          CARDS.append(CARD);
-
-    const HEADLINE = document.createElement('div');
-          HEADLINE.classList.add('headline');
-          HEADLINE.textContent = article.headline
-          CARD.append(HEADLINE);
-
-    const AUTHOR = document.createElement('div');
-          AUTHOR.classList.add('author');
-          CARD.append(AUTHOR);
-
-    const IMG_CONT = document.createElement('div');
-          IMG_CONT.classList.add('img-container');
-          AUTHOR.append(IMG_CONT);
-
-    const IMG = document.createElement('img');
-          IMG.src = article.authorPhoto;
-          IMG_CONT.append(IMG);
-
-    const NAME = document.createElement('span')
-          NAME.textContent = article.authorName;
-          AUTHOR.append(NAME);
-  });
+      const NAME = document.createElement('span')
+            NAME.textContent = art.authorName;
+            AUTHOR.append(NAME);
+    });
+  }
+  // obj.articles.bootstrap.map( article => {
+  //   const CARD = document.createElement('div');
+  //         CARD.classList.add('card');
+  //         CARDS.append(CARD);
+  //
+  //   const HEADLINE = document.createElement('div');
+  //         HEADLINE.classList.add('headline');
+  //         HEADLINE.textContent = article.headline
+  //         CARD.append(HEADLINE);
+  //
+  //   const AUTHOR = document.createElement('div');
+  //         AUTHOR.classList.add('author');
+  //         CARD.append(AUTHOR);
+  //
+  //   const IMG_CONT = document.createElement('div');
+  //         IMG_CONT.classList.add('img-container');
+  //         AUTHOR.append(IMG_CONT);
+  //
+  //   const IMG = document.createElement('img');
+  //         IMG.src = article.authorPhoto;
+  //         IMG_CONT.append(IMG);
+  //
+  //   const NAME = document.createElement('span')
+  //         NAME.textContent = article.authorName;
+  //         AUTHOR.append(NAME);
+  // });
+  // obj.articles.technology.map( article => {
+  //   const CARD = document.createElement('div');
+  //         CARD.classList.add('card');
+  //         CARDS.append(CARD);
+  //
+  //   const HEADLINE = document.createElement('div');
+  //         HEADLINE.classList.add('headline');
+  //         HEADLINE.textContent = article.headline
+  //         CARD.append(HEADLINE);
+  //
+  //   const AUTHOR = document.createElement('div');
+  //         AUTHOR.classList.add('author');
+  //         CARD.append(AUTHOR);
+  //
+  //   const IMG_CONT = document.createElement('div');
+  //         IMG_CONT.classList.add('img-container');
+  //         AUTHOR.append(IMG_CONT);
+  //
+  //   const IMG = document.createElement('img');
+  //         IMG.src = article.authorPhoto;
+  //         IMG_CONT.append(IMG);
+  //
+  //   const NAME = document.createElement('span')
+  //         NAME.textContent = article.authorName;
+  //         AUTHOR.append(NAME);
+  // });
+  // obj.articles.jquery.map( article => {
+  //   const CARD = document.createElement('div');
+  //         CARD.classList.add('card');
+  //         CARDS.append(CARD);
+  //
+  //   const HEADLINE = document.createElement('div');
+  //         HEADLINE.classList.add('headline');
+  //         HEADLINE.textContent = article.headline
+  //         CARD.append(HEADLINE);
+  //
+  //   const AUTHOR = document.createElement('div');
+  //         AUTHOR.classList.add('author');
+  //         CARD.append(AUTHOR);
+  //
+  //   const IMG_CONT = document.createElement('div');
+  //         IMG_CONT.classList.add('img-container');
+  //         AUTHOR.append(IMG_CONT);
+  //
+  //   const IMG = document.createElement('img');
+  //         IMG.src = article.authorPhoto;
+  //         IMG_CONT.append(IMG);
+  //
+  //   const NAME = document.createElement('span')
+  //         NAME.textContent = article.authorName;
+  //         AUTHOR.append(NAME);
+  // });
+  // obj.articles.node.map( article => {
+  //   const CARD = document.createElement('div');
+  //         CARD.classList.add('card');
+  //         CARDS.append(CARD);
+  //
+  //   const HEADLINE = document.createElement('div');
+  //         HEADLINE.classList.add('headline');
+  //         HEADLINE.textContent = article.headline
+  //         CARD.append(HEADLINE);
+  //
+  //   const AUTHOR = document.createElement('div');
+  //         AUTHOR.classList.add('author');
+  //         CARD.append(AUTHOR);
+  //
+  //   const IMG_CONT = document.createElement('div');
+  //         IMG_CONT.classList.add('img-container');
+  //         AUTHOR.append(IMG_CONT);
+  //
+  //   const IMG = document.createElement('img');
+  //         IMG.src = article.authorPhoto;
+  //         IMG_CONT.append(IMG);
+  //
+  //   const NAME = document.createElement('span')
+  //         NAME.textContent = article.authorName;
+  //         AUTHOR.append(NAME);
+  // });
 
 }
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-      .then( src => cards(src.data))
+      .then( src => cards(src.data.articles));
